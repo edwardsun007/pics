@@ -16,9 +16,15 @@
 .image-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
+  text-align: center;
 }
 
 .col {
   flex: 1;
+  vertical-align: top;
+}
+
+.image {
+  width: 480px;
 }

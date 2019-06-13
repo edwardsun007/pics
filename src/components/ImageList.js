@@ -7,7 +7,7 @@ const ImageList = props => {
 
   const img = props.images.map(image => {
     console.log(image);
-    return <ImageDetail className="col" key={image.id} image={image} />;
+    return <ImageDetail key={image.id} image={image} />;
   });
   return <div className="image-list">{img}</div>;
 };

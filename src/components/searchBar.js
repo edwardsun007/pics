@@ -29,22 +29,7 @@ class SearchBar extends Component {
     console.log(event.target.value);
     // directly call props.onChange and pass the target.value
     this.props.onChange(event.target.value);
-    //this.setState({ term: event.target.value });
 
-    // let query = event.target.value;
-    // let per_page = 5;
-    // let client_id =
-    //   "a611e9939cbbe30ff2cc8aa53beb512b17142d324758dde8d016c06937f8bd81";
-    // const response = await axios.get(
-    //   `https://api.unsplash.com/search/photos?client_id=${client_id}&query=${query}&per_page=${per_page}`
-    //   /*,{
-    //       params: {query: term},
-    //       headers: {
-    //         Authorization: 'Client-ID xxxxxx'
-    //       }
-    //     }
-    //     */
-    // );
     //this.setState({ images: response.data.results });
     // .then(res => {
     //   console.dir(res.data.results);

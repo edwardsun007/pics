@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./image.css";
 
 class ImageDetail extends Component {
   constructor(props) {
@@ -7,16 +8,6 @@ class ImageDetail extends Component {
     // this.state = { span: 0 };
   }
 
-  // componentDidMount() {
-  //   this.imageRef.current.addEventListener("load", this.editSpan);
-  // }
-
-  // editSpan = () => {
-  //   const height = this.imageRef.current.clientHeight;
-  //   const span = Math.ceil(height / 20);
-  //   this.setState({ span });
-  // };
-
   render() {
     //const { description, urls } = this.props.image;
     const desc = this.props.image.slug;
@@ -24,7 +15,7 @@ class ImageDetail extends Component {
     console.log(url);
     // style={{ gridRowEnd: `span ${this.state.span}` }}
     return (
-      <div className="ui card">
+      <div className="col">
         <div className="image">
           <img src={url} alt={desc} />
         </div>
