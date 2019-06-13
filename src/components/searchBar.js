@@ -9,27 +9,21 @@ class SearchBar extends Component {
     super(props);
     this.state = {
       images: [],
-      term: ""
+      term: "",
+      quality: ""
     };
   }
 
-  onFormSubmit = event => {
-    event.preventDefault();
+  // onFormSubmit = event => {
+  //   event.preventDefault();
+  //   this.props.onSubmit(this.state.term);
+  // };
 
-    this.props.onSubmit(this.state.term);
+  onSelect = event => {
+    console.log(event.target.value);
+    this.setState({ quality: event.target.value });
   };
 
-  onInputChange(event) {
-    console.log(event.target.value);
-  }
-
-  /*
-    var apikey = 'wiopv1QEmVomgnaELq1YRjomVtm0Gana',
-		baseUrl = 'https://api.giphy.com',
-		url = '/v1/gifs/search';
-    http://api.giphy.com/v1/gifs/search?q=SEARCH&api_key=YOUR_API_KEY&limit=VAL"
-
-*/
   onTyping = event => {
     event.preventDefault();
     console.log(event.target.value);
@@ -60,17 +54,22 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="ui container">
-        <div className="ui segment">
-          <div className="ui large header">Assignment</div>
-          <form onSubmit={this.onFormSubmit} className="ui form">
-            <div className="field">
-              <label htmlFor="">
-                Type your search term for the gif here...
-              </label>
+        <div className="ui large header">Assignment</div>
+        <form onSubmit={this.onFormSubmit} className="ui form">
+          <div className="field">
+            <label htmlFor="">
+              Type your search term and select image quality here...
+            </label>
+            <div className="ui input">
               <input type="text" onChange={this.onTyping} />
+              <select onChange={this.onSelect}>
+                <option value="low">Low Quality</option>
+                <option value="mid">Medium Quality</option>
+                <option value="high">High Quality</option>
+              </select>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     );
   }

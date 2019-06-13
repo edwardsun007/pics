@@ -10,15 +10,17 @@ class App extends Component {
 
   onSearchChange = async term => {
     console.log(term);
+    // data.images. downsized.url  348x328
+    let limit = 10;
+    let apikey = "wiopv1QEmVomgnaELq1YRjomVtm0Gana";
+    let baseURL = "https://api.giphy.com";
 
-    let per_page = 5;
-    let client_id =
-      "a611e9939cbbe30ff2cc8aa53beb512b17142d324758dde8d016c06937f8bd81";
     const res = await axios.get(
-      `https://api.unsplash.com/search/photos?client_id=${client_id}&query=${term}&per_page=${per_page}`
+      `${baseURL}/v1/gifs/search?q=${term}&api_key=${apikey}&limit=${limit}`
     );
 
-    this.setState({ images: res.data.results });
+    console.log(res.data.data);
+    this.setState({ images: res.data.data });
   };
 
   render() {
